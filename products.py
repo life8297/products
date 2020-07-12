@@ -21,3 +21,6 @@ print(products)
 # 存取二維清單
 # products[0][0] # 大清單中的第0資料, 中的小清單第0個資料
 # products[1][1] # 大清單中的第1資料, 中的小清單第1個資料
+
+for p in products: # 利用for拆解第一層清單
+	print(p[0], '的價格為:', p[1], '元')
