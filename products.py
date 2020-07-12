@@ -4,6 +4,7 @@ while True: # 未知範圍常用while True; 已知範圍用for搭配range
 	if name == 'q':
 		break
 	price = input('請輸入該商品價格(元): ')
+	price = int(price)
 	# 二維清單
 	# 原始: 
 	# p = [] 
@@ -24,3 +25,7 @@ print(products)
 
 for p in products: # 利用for拆解第一層清單
 	print(p[0], '的價格為:', p[1], '元')
+
+with open('products.csv', 'w') as f: # 打開檔案
+	for p in products:
+		f.write(p[0] + ',' + str(p[1]) + '元' + '\n') # 寫入檔案 # 字串的合併
