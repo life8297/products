@@ -1,5 +1,7 @@
 import os # operating system
 products = []
+
+# 確認檔案是否存在
 if os.path.isfile('products.csv'):
 	print('已找到檔案, 請寫入內容')
 	# 讀取檔案內容
