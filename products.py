@@ -23,11 +23,6 @@ def user_input(products):
 		products.append([name, price])
 	return(products)
 
-# 印出所有購買紀錄
-def print_products(products):
-	print(products)
-
-
 # 寫入新內容到檔案
 def write_file(file_name, products):
 	with open(file_name, 'w', encoding = 'utf-8') as f: # 打開檔案 # 限定編碼模式
@@ -42,13 +37,13 @@ def main():
 		print('已找到檔案, 以下為目前記錄 ,請繼續寫入內容:')
 		products = read_file(file_name)
 		products = user_input(products)
-		print_products(products)
+		print(products)
 		write_file('products.csv', products)
 	else:
 		print('檔案不存在, 已建立')
 		products = []
 		products = user_input(products)
-		print_products(products)
+		print(products)
 		write_file('products.csv', products)
 	
 main()
