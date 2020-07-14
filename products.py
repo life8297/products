@@ -40,11 +40,15 @@ def main():
 	# 確認檔案是否存在
 	if os.path.isfile(file_name):
 		print('已找到檔案, 以下為目前記錄 ,請繼續寫入內容:')
+		products = read_file(file_name)
+		products = user_input(products)
+		print_products(products)
+		write_file('products.csv', products)
 	else:
-			print('檔案不存在, 已建立')
-	products = read_file(file_name)
-	products = user_input(products)
-	print_products(products)
-	write_file('products.csv', products)
-
+		print('檔案不存在, 已建立')
+		products = []
+		products = user_input(products)
+		print_products(products)
+		write_file('products.csv', products)
+	
 main()
